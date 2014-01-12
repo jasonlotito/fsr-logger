@@ -1,0 +1,26 @@
+{
+  "name": "fsr-logger",
+  "description": "Simple wrapper over file-stream-rotator that lets you make easy loggers",
+  "version": "0.0.1",
+  "author": "Jason Lotito <jasonlotito@gmail.com>",
+  "license": "MIT",
+  "main": "fsr-logger.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jasonlotito/fsr-logger.git"
+  },
+  "keywords": [
+    "log",
+    "logger",
+    "file-stream-rotator",
+    "rotate",
+    "file",
+    "minute",
+    "hourly",
+    "daily",
+    "logrotate"
+  ],
+  "dependencies": {
+    "file-stream-rotator": "0.0.*"
+  }
+}
