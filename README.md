@@ -24,6 +24,9 @@ fsr-logger makes it easy to create multiple log files
 ```
 var create_logger = require('fsr-logger').create_logger,
   log = create_logger(),
-  error = create_logger('./logs/error.log');
+  error = create_logger('./log/error.log');
+
+log("Outputs to ./log/activity.log");
+error("Outputs to ./log/error.log");
 ```
 
