@@ -1,6 +1,5 @@
 var
   moment = require('moment'),
-  sprintf = require('sprintf'),
   fsr = require('file-stream-rotator');
 
 function create_simple_config (name, frequency, verbosity) {
@@ -22,7 +21,7 @@ function create_logger (streamConfig) {
   var stream = fsr.getStream(streamConfig);
 
   return function(msg) {
-    stream.write(sprintf("%s %s\n", moment().toISOString(), msg));
+    stream.write(moment().toISOString() + ' ' + msg);
   };
 }
 
