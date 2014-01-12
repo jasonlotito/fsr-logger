@@ -81,6 +81,7 @@ function get_logger_creator(type) {
 
 module.exports = {
   create_logger: create_logger,
+  create_noop_logger: create_noop_logger,
   create_fsr_config: create_fsr_config,
   get_logger_creator: get_logger_creator
 };
