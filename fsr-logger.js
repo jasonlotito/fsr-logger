@@ -50,6 +50,14 @@ function create_logger (streamConfig) {
   };
 }
 
+/**
+ * Creates a logger function that does nothing
+ *
+ * This is allows you to have debug() functions in your code that work in development, but do nothing in production.  Also avoids needing to do if
+ * checks before every log function.
+ *
+ * @returns {function()}
+ */
 function create_noop_logger() {
   return function(){};
 }
