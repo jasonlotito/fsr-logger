@@ -21,6 +21,8 @@
     "logrotate"
   ],
   "dependencies": {
-    "file-stream-rotator": "0.0.*"
+    "file-stream-rotator": "0.0.*",
+    "moment": "2.5.*",
+    "sprintf": "~0.1.3"
   }
 }

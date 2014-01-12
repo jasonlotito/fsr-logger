@@ -1,4 +1,6 @@
 var
+  moment = require('moment'),
+  sprintf = require('sprintf'),
   fsr = require('file-stream-rotator');
 
 function create_logger (streamConfig) {
