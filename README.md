@@ -38,3 +38,23 @@ Using the above error() function output:
 2014-01-12T16:28:11.215Z Outputs to ./log/error.log
 ```
 
+## Use the logger creator factory
+
+This makes creating loggers that only run in certain conditions easy.
+
+```
+create_debug_logger = require('fsr-logger').get_logger_creator('noop');
+debug = create_debug_logger('./log/debug.log');
+debug('This will output nothing');
+```
+
+
+```
+create_debug_logger = require('fsr-logger').get_logger_creator(); // or passed 'default'
+debug = create_debug_logger('./log/debug.log');
+debug('This will output to ./log/debug.log');
+```
+
+However, changing noop to be 'default' (or nothing) will result in normal logger file behavior.  How is this useful?  Using this, you can use debug()
+log functionality in your code, and pass to get_logger_creator either 'noop' or 'default' based on the environment, or from the command line.  You
+don't have to worry about messy if checks.
