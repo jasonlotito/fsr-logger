@@ -9,6 +9,9 @@
     "type": "git",
     "url": "git://github.com/jasonlotito/fsr-logger.git"
   },
+  "bugs":{
+    "url": "http://github.com/jasonlotito/fsr-logger/issues"
+  }
   "keywords": [
     "log",
     "logger",
