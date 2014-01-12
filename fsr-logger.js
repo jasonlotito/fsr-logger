@@ -3,18 +3,19 @@ var
   sprintf = require('sprintf'),
   fsr = require('file-stream-rotator');
 
-function create_simple_config(name, frequency, verbosity) {
+function create_simple_config (name, frequency, verbosity) {
   var config = {}
   config.filename = name || './log/activity.log';
   config.frequency = frequency || 'daily';
   config.verbose = verbosity || false;
+  return config;
 }
 
 function create_logger (streamConfig) {
 
-  if(!streamConfig) {
+  if (! streamConfig) {
     streamConfig = create_simple_config();
-  } else if(typeof streamConfig == 'string') {
+  } else if (typeof streamConfig == 'string') {
     streamConfig = create_simple_config(streamConfig);
   }
 
@@ -25,5 +26,6 @@ function create_logger (streamConfig) {
   };
 }
 
-module.exports = create_logger;
-module.exports.fileStreamRotator = fsr;
+module.exports = {
+  create_logger: create_logger
+};
