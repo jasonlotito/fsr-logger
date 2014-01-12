@@ -3,13 +3,20 @@ var
   sprintf = require('sprintf'),
   fsr = require('file-stream-rotator');
 
+function create_simple_config(name, frequency, verbosity) {
+  var config = {}
+  config.filename = name || './log/activity.log';
+  config.frequency = frequency || 'daily';
+  config.verbose = verbosity || false;
+}
+
 function create_logger (streamConfig) {
 
-  streamConfig = streamConfig || {
-      filename: './log/activity.log',
-      frequency: 'daily',
-      verbose: false
-    };
+  if(!streamConfig) {
+    streamConfig = create_simple_config();
+  } else if(typeof streamConfig == 'string') {
+    streamConfig = create_simple_config(streamConfig);
+  }
 
   var stream = fsr.getStream(streamConfig);
 
