@@ -30,3 +30,11 @@ log("Outputs to ./log/activity.log");
 error("Outputs to ./log/error.log");
 ```
 
+## Output sample
+
+Using the above error() function output:
+
+```
+2014-01-12T16:28:11.215Z Outputs to ./log/error.log
+```
+
