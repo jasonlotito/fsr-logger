@@ -46,11 +46,33 @@ function create_logger (streamConfig) {
   var stream = fsr.getStream(conf);
 
   return function(msg) {
-    stream.write(moment().toISOString() + ' ' + msg);
+    stream.write(moment().toISOString() + ' ' + msg + "\n");
   };
+}
+
+function create_noop_logger() {
+  return function(){};
+}
+
+var loggers = {
+  default: create_logger,
+  noop: create_noop_logger
+};
+
+/**
+ * Factory for returning the appropriate logger creator... factory.
+ *
+ * Yes, it's a factory factory.
+ *
+ * @param {string} type
+ * @returns {create_logger}
+ */
+function get_logger_creator(type) {
+  return loggers[type] ? loggers[type] : loggers.default;
 }
 
 module.exports = {
   create_logger: create_logger,
-  create_fsr_config: create_fsr_config
+  create_fsr_config: create_fsr_config,
+  get_logger_creator: get_logger_creator
 };
