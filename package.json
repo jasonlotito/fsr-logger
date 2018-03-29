@@ -1,7 +1,7 @@
 {
   "name": "fsr-logger",
   "description": "Simple wrapper over file-stream-rotator that lets you make easy loggers",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Jason Lotito <jasonlotito@gmail.com>",
   "license": "MIT",
   "main": "fsr-logger.js",
